@@ -15,16 +15,17 @@ $chart_data = substr($chart_data, 0, -2);
 <!DOCTYPE html>
 <html>
 <head>
+<head>
 	<title>Del Leonor Hotel | Admin</title>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="morris.css">
-  	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
-  	<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-  	<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-
+  	<script src="js/jquery.min.js"></script>
+  	<script src="js/raphael-min.js"></script>
+  	<script src="js/morris.min.js"></script>
 </head>
+
 <body>
 	<br><br>
 	<div class="container" style="width:900px;">
