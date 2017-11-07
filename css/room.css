@@ -1,0 +1,45 @@
+body{
+	background-color: #40e0d0
+}
+.col-2 {
+	width: 44%;
+	margin-left: 3%;
+	margin-right: 3%;
+	border-style: solid;
+	margin-bottom: 1%;
+}
+.col-4 {
+	width: 21%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 5%;
+	border-style: solid;
+}
+.ab{
+	float: left;
+	height: 50%;
+	color: black;
+	font-family: Helvetica;
+	font-size: 14px;
+	background-color: skyblue;
+}
+.ab-pic{
+	width: 25%;
+}
+.bo{
+	float: left;
+	height: 50%;
+	color: black;
+	font-family: Helvetica;
+	font-size: 14px;
+	background-color: lightgreen;
+}
+.bo-pic{
+	width: 25%;
+}
+
+#input{
+  float: right;
+  width: 50%;
+  margin-right: 10%;
+}
