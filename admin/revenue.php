@@ -15,8 +15,7 @@ $chart_data = substr($chart_data, 0, -2);
 <!DOCTYPE html>
 <html>
 <head>
-<head>
-	<title>Del Leonor Hotel | Admin</title>
+	<title>POS| Admin</title>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,8 +26,8 @@ $chart_data = substr($chart_data, 0, -2);
 </head>
 
 <body>
-	<br><br>
-	<div class="container" style="width:900px;">
+	<br><br><br><br>
+	<div class="container" style="width: 90%">
    <h2 align="center">D' Leonor`s Daily Revenue</h2>   
    <br /><br />
    <div id="chart"></div>

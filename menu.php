@@ -11,9 +11,9 @@
       <img src="Images/shuttle.png" class ="ba-pic">
       <form>
         <h3>Entrance</h3>
-        <h5>Kids <input type="number" name="kids" id="input"></h5>  
-        <h5>Adults <input type="number" name="adults" id="input"></h5>
-        <h5>Discounted <input type="number" name="discounted" id="input"></h5>
+        <h5>Kids <input type="number" name="kids" id="input" min="0"></h5>  
+        <h5>Adults <input type="number" name="adults" id="input" min="0"></h5>
+        <h5>Discounted <input type="number" name="discounted" id="input" min="0"></h5>
         <br>
       </form>
       <input type="submit" name="submit" id="btn">

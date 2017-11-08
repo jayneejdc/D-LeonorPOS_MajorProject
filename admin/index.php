@@ -1,58 +1,52 @@
-<?php include 'header.html';?>
+<?php
+	$host = 'localhost';
+	$user = 'root';
+	$pass = '';
+	$db = 'pos';
+	$mysqli = new mysqli($host,$user,$pass,$db) or die($mysqli->error);
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Del Leonor Hotel | Admin</title>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="admin_style.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="bootstrap.min.css" type="text/css" rel="stylesheet">
-
+	<title>Admin Login</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/index.css">
 </head>
+
+<?php 
+	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+	    if (isset($_POST['login'])) { //user logging in
+	        require 'login.php';        
+	    }
+	}
+?>
+
 <body>
-	<br><br><br>
+  	<div class="form">
+      	<div class="tab-content">  
+        		<h1>Welcome Back!</h1>
+        		<form action="index.php" method="post" autocomplete="off">
+            		<div class="field-wrap">
+            			<label>
+            				Email Address<span class="req">*</span>
+            			</label>
+            			<input type="email" required autocomplete="off" name="email"/>
+          			</div>
+          			<div class="field-wrap">
+            			<label>
+              				Password<span class="req">*</span>
+            			</label>
+            			<input type="password" required autocomplete="off" name="password"/>
+  	        		</div>
+     	     		<p class="forgot"><a href="forgot.html">Forgot Password?</a></p>
+          			<button class="button button-block" name="login" />Log In</button>
+          		</form> 
+    	</div><!-- tab-content -->
+	</div> <!-- /form -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/index.js"></script>
 </body>
-<div class="table" id="total_user" style="background-color: white;">
-<table class="table" class="table table-hover">
-  <thead>
-    <tr>
-      <th>ID #</th>
-      <th>LASTNAME</th>
-      <th>FIRSTNAME</th>
-      <th>CONTACTS</th>
-      <th>EMAIL</th>
-      <th>USERNAME</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">01</th>
-      <td>Coquilla</td>
-      <td>Angelica</td>
-      <td>09095045125</td>
-      <td>angelicacoquilla08@gmail.com</td>
-      <td>angelica</td>
-    </tr>
-    <tr>
-      <th scope="row">02</th>
-      <td>De Claro</td>
-      <td>Jeelenee</td>
-      <td>09095045125</td>
-      <td>Jdeclaroc@gmail.com</td>
-      <td>jaynee</td>
-    </tr>
-    <tr>
-      <th scope="row">03</th>
-      <td>Martinez</td>
-      <td>Kyle</td>
-      <td>09095045125</td>
-      <td>kylemartinez8@gmail.com</td>
-      <td>kyle_matthew</td>
-    </tr>
-    
-  </tbody>
-</table>
-</div>
 </html>
-<?php include 'footer.html';?>
