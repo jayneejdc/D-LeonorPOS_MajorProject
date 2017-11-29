@@ -1,6 +1,3 @@
-<?php include 'header.html';?>
-<br><br>
-<?php $db= new mysqli('localhost','root','','pos'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,12 +27,12 @@ table caption {
   <div class="row">
     <div class="col-xs-12">
       <div class="table-responsive">
-        <table class="table table-bordered table-hover">
+        <table summary="This table shows how to create responsive tables using Bootstrap's default functionality" class="table table-bordered table-hover">
           <thead>
             <tr>
              
               <th><center>Invoice No.</center></th>
-              <th colspan="24"><center>Rides</center></th>
+              <th colspan="6"><center>Amenities</center></th>
               <th><center>Total No. of Tickets</center></th>
               <th><center>Amount to Pay</center></th>
               <th><center>Username</center></th>
@@ -46,48 +43,24 @@ table caption {
           <tbody>
             <tr>
               <th></th>
-              <th colspan="3"><center>ZIPLINE</center></th>
-              <th colspan="3"><center>C.CAR</center></th>
-              <th colspan="3"><center>B.CAR</center></th>
-              <th colspan="3"><center>ATV</center></th>
-              <th colspan="3"><center>B.CART</center></th>
-              <th colspan="3"><center>G.KART</center></th>
-              <th colspan="3"><center>SEGWAY</center></th>
-              <th colspan="3"><center>B.BOAT</center></th>
+              <th colspan="3"><center>WAVEPOOL</center></th>
+              <th colspan="3"><center>GIANT POOL</center></th>
               <th></th>
               <th></th>
               <th></th>
               <th></th>
             </tr>
             <tr>
-            <th></th>
-            <th>K</th>
-            <th>A</th>
-            <th>D</th>
-            <th>K</th>
-            <th>A</th>
-            <th>D</th>
-            <th>K</th>
-            <th>A</th>
-            <th>D</th>
-            <th>K</th>
-            <th>A</th>
-            <th>D</th>
-            <th>K</th>
-            <th>A</th>
-            <th>D</th>
-            <th>K</th>
-            <th>A</th>
-            <th>D</th>
-            <th>K</th>
-            <th>A</th>
-            <th>D</th>
-            <th>K</th>
-            <th>A</th>
-            <th>D</th>
-            <th></th>
-            <th></th>
-            <th></th>
+              <th></th>
+              <th>K</th>
+              <th>A</th>
+              <th>D</th>
+              <th>K</th>
+              <th>A</th>
+              <th>D</th>
+              <th></th>
+              <th></th>
+              <th></th>
               <th></th>
             </tr>
           </tbody>

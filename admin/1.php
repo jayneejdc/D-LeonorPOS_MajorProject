@@ -27,9 +27,8 @@ $chart_data = substr($chart_data, 0, -2);
 </head>
 <body>
 	<br><br>
-	<div class="container" style="width:970px; margin-top: 10%;">
-   <h3 align="center">D' Leonor`s Daily Revenue</h3> 
-   <h5><center>(November 01-07 2017)</center></h5>
+	<div class="container" style="width:570px; margin-top: 10%; margin-left: 60%;">
+   <h2 align="center">D' Leonor`s Yearly Revenue</h2>   
    <br /><br />
    <div id="chart"></div>
   </div>
@@ -37,7 +36,7 @@ $chart_data = substr($chart_data, 0, -2);
 </body>
 </html>
 <script>
-	Morris.Bar({
+	Morris.Line({
 	 element : 'chart',
 	 data:[<?php echo $chart_data; ?>],
 	 xkey:'day',

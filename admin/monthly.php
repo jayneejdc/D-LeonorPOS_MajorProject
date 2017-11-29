@@ -2,12 +2,12 @@
 <?php
 //index.php
 $connect = mysqli_connect("localhost", "root", "", "pos");
-$query = "SELECT * FROM revenue";
+$query = "SELECT * FROM monthly";
 $result = mysqli_query($connect, $query);
 $chart_data = '';
 while($row = mysqli_fetch_array($result))
 {
- $chart_data .= "{ day:'".$row["day"]."', profit:".$row["profit"].", purchase:".$row["purchase"].", sale:".$row["sale"]."}, ";
+ $chart_data .= "{ month:'".$row["month"]."', profit:".$row["profit"].", purchase:".$row["purchase"].", sale:".$row["sale"]."}, ";
 }
 $chart_data = substr($chart_data, 0, -2);
 ?>
@@ -27,9 +27,9 @@ $chart_data = substr($chart_data, 0, -2);
 </head>
 <body>
 	<br><br>
-	<div class="container" style="width:970px; margin-top: 10%;">
-   <h3 align="center">D' Leonor`s Daily Revenue</h3> 
-   <h5><center>(November 01-07 2017)</center></h5>
+	<div class="container" style="width:1110px; margin-top: 10%;">
+   <h3 align="center">D' Leonor`s Monthly Revenue</h3> 
+   <h5><center>(January-November 2017)</center></h5>
    <br /><br />
    <div id="chart"></div>
   </div>
@@ -40,7 +40,7 @@ $chart_data = substr($chart_data, 0, -2);
 	Morris.Bar({
 	 element : 'chart',
 	 data:[<?php echo $chart_data; ?>],
-	 xkey:'day',
+	 xkey:'month',
 	 ykeys:['profit', 'purchase', 'sale'],
 	 labels:['Profit', 'Purchase', 'Sale'],
 	 hideHover:'auto',
