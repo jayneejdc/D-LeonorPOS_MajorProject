@@ -1,5 +1,7 @@
-<?php include 'header.html';?>
+
 <br><br>
+
+
 <?php $db= new mysqli('localhost','root','','pos'); ?>
 <html>
    <head>
@@ -7,20 +9,16 @@
           <meta charset="utf-8">
           <meta http-equiv="X-UA-Compatible" content="IE=edge">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="admin_style.css" type="text/css" rel="stylesheet">
           <link rel="stylesheet" href="bootstrap.min.css" type="text/css" rel="stylesheet">
           <link rel="stylesheet" href="admin.css" type="text/css" rel="stylesheet">
-          <link rel="stylesheet" href="button.css" type="text/css" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
           <script src="bootstrap/js/jquery.min.js"></script>
           <script src="bootstrap/js/bootstrap.min.js"></script>
           <script src="bootstrap/js/jquery-1.9.1.js"></script>
    </head>
    <body>
     <br/>
-      <div class="container" style="width: 110%; position: fixed; margin-left: -18%; margin-top: 5%;"><br/>
-       <div align="right">
-        
-       </div> <br />
+      <div class="container" style="width: 100%; position: fixed; margin-left: -3%;  margin-top: 1%;"><br/>
 <div class="panel panel-default" style="margin-left:24%;">
     <div class="panel-heading">User Status Details</div>
     <div class="panel-body">
@@ -29,20 +27,22 @@
      </div>
         <table class="table table-bordered table-striped">
            <tr>
-                <td>ID</td>
-                <td>LASTNAME</td>
-                <td>FIRSTNAME</td>
-                <td>EMAIL</td>
-                <td>ACTION</td>
+                <td>Employee ID</td>
+                <td>Last Name</td>
+                <td>First Name</td>
+                <td>Username</td>
+                <td>Last Login</td>
+                <td>Action</td>
             </tr>
             <?php $sql=$db->query("Select * from user");
                 foreach ($sql as $key => $user) :
                   ?>
             <tr>
                 <td><?php echo $user['id'] ?></td>
-                <td><?php echo $user['user_lastname']; ?></td>
-                <td><?php echo $user['user_firstname']; ?></td>
-                <td><?php echo $user['user_email']; ?>
+                <td><?php echo $user['lastname']; ?></td>
+                <td><?php echo $user['firstname']; ?></td>
+                <td><?php echo $user['username'] ?></td>
+                <td><?php echo $user['lastLogin']; ?>
                 <td><i data="<?php echo $user['id'];?>" class="status_checks btn <?php echo ($user['status'])? 'btn-success' : 'btn-danger'?>"><?php echo ($user['status'])? 'Active' : 'Inactive'?></i></td>
             </tr>
            <?php endforeach; ?>
@@ -73,3 +73,5 @@ if(confirm("Are you sure to "+ msg)){
   }      
 });
 </script>
+
+<?php include 'sidebar.php';?>

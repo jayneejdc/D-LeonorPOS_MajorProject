@@ -5,7 +5,7 @@
       $connect = mysqli_connect("localhost", "root", "", "pos");  
       $output = '';  
       $query = "  
-           SELECT * FROM atv_truck 
+           SELECT * FROM buggy_kart  
            WHERE dat BETWEEN '".$_POST["from_date"]."' AND '".$_POST["to_date"]."'  
       ";  
       $result = mysqli_query($connect, $query);  
@@ -34,8 +34,8 @@
            {  
                 $output .= '  
                      <tr>  
-                          <td>'. $row["id"] .'</td> 
-                          <td>'. $row["username"] .'</td>   
+                          <td>'. $row["id"] .'</td>
+                          <td>'. $row["username"] .'</td>  
                           <td>'. $row["akid"] .'</td>  
                           <td>'. $row["aadult"] .'</td>  
                           <td> '. $row["adisc"] .'</td>  

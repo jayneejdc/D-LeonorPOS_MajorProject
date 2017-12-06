@@ -5,7 +5,7 @@
       $connect = mysqli_connect("localhost", "root", "", "pos");  
       $output = '';  
       $query = "  
-           SELECT * FROM atv_truck 
+           SELECT * FROM giant_slide  
            WHERE dat BETWEEN '".$_POST["from_date"]."' AND '".$_POST["to_date"]."'  
       ";  
       $result = mysqli_query($connect, $query);  
@@ -14,7 +14,7 @@
             <tr> 
               <th><center>Invoice No.</center></th>
               <th><center>Username</center></th>
-              <th colspan="3"><center>ATV</center></th>
+              <th colspan="3"><center>Giant Slide</center></th>
               <th><center>Date</center></th>
 
             </tr>
@@ -34,11 +34,11 @@
            {  
                 $output .= '  
                      <tr>  
-                          <td>'. $row["id"] .'</td> 
-                          <td>'. $row["username"] .'</td>   
-                          <td>'. $row["akid"] .'</td>  
-                          <td>'. $row["aadult"] .'</td>  
-                          <td> '. $row["adisc"] .'</td>  
+                          <td>'. $row["id"] .'</td>
+                          <td>'. $row["username"] .'</td>  
+                          <td>'. $row["gskid"] .'</td>  
+                          <td>'. $row["gsdult"] .'</td>  
+                          <td> '. $row["gsdisc"] .'</td>  
                           <td>'. $row["dat"] .'</td>
                      </tr>  
                 ';  
