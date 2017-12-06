@@ -18,11 +18,6 @@ $_SESSION['lastname'] = $lastname;
 $ekid = $_POST['ekid'];
 $eadult = $_POST['eadult'];
 $edisc = $_POST['edisc'];
-
-if (empty($ekid) && empty($eadult) && empty($edisc)) {
-	header("location: menu.php");
-}
-
 //pools
 $wpkid = $_POST['wpkid'];
 $wpadult = $_POST['wpadult'];
@@ -155,6 +150,10 @@ if ($bbadult==""){
 if ($bbdisc==""){
 	$bbdisc="0";
 }
+if (empty($gskid) && empty($gsadult) && empty($gsdisc) && empty($wpkid) && empty($wpadult) && empty($wpdisc) && empty($bckid) && empty($bcadult) && empty($bcdisc) && empty($bkkid) && empty($bkadult) && empty($bkdisc) && empty($zkid) && empty($zadult) && empty($zdisc) && empty($cckid) && empty($ccadult) && empty($ccdisc) && empty($akid) && empty($aadult) && empty($adisc) && empty($skid) && empty($sadults) && empty($sdisc) && empty($gkkid) && empty($gkadult) && empty($gkdisc) && empty($bbkid) && empty($bbadult) && empty($bbdisc) ) {
+	
+	header("location: walkin.php");
+}
 $options="";
 $temp="";
 $sql = "INSERT INTO history (dat, username, ekid, eadult, edisc, gskid, gsadult, gsdisc, wpkid, wpadult, wpdisc, bckid, bcadult, bcdisc, bkkid, bkadult, bkdisc, zkid, zadult, zdisc, cckid, ccadult, ccdisc, akid, aadult, adisc, skid, sadult, sdisc, gkkid, gkadult, gkdisc, bbkid, bbadult, bbdisc) VALUES (NOW(),'$num', '$ekid','$eadult','$edisc','$gskid','$gsadult','$gsdisc','$wpkid','$wpadult','$wpdisc','$bckid','$bcadult','$bcdisc','$bkkid','$bkadult','$bkdisc','$zkid','$zadult','$zdisc','$cckid','$ccadult','$ccdisc','$akid','$aadult','$adisc','$skid','$sadults','$sdisc','$gkkid','$gkadult','$gkdisc','$bbkid','$bbadult','$bbdisc')";
@@ -243,11 +242,10 @@ if ( $mysqli->query($sqlr) ){
 <body>
 	<div class="receipt">
 	<table style="width: 100%; text-align: center;">
-		<img src="Images/logoo.png" style="width: 10%; margin-left: 45%;">
-		<p><center><strong>D'Leonor Inland Resort<br>
+		<p><center><strong>Official Receipt<br>
+		D'Leonor Inland Resort<br>
 		Purok 5, Barangay Communal,<br>
-		Davao City, Philippines, 8000<br><br>
-		Official Receipt<br>
+		Davao City, Philippines, 8000
 		</strong></center></p>
 		<br>
 		<p><strong>Date: <?php echo ($temp); ?><br>
@@ -307,14 +305,15 @@ if ( $mysqli->query($sqlr) ){
 			<br>
 			</tr>
 			</table>
-			<div style="margin-bottom: 3%;">
+			<div style="margin-bottom: 5%;">
 				<p><center><strong>Email: dleonorinlandresort@gmail.com<br>
 				Tel No: +211 112 121 212<br>
 				Thank you. Come again.</strong></center></p>
 			</div>
-	</div>	
+	</div>
 	
-		<button onclick="myFunction()" style="float: right; margin-right: 30%; margin-top: 1%; width: 4%;" class="button"><img src="Images/print.png" alt="Print" style="width: 80%;"></button>
+	
+		<button onclick="myFunction()" style="float: right; margin-right: 30%; margin-top: 1%; width: 5%;" class="button"><img src="Images/print.png" alt="Print" style="width: 80%;"></button>
 </body>
 <script>
 function myFunction() {
