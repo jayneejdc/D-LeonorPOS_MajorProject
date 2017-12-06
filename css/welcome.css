@@ -12,17 +12,21 @@ body {
   linear-gradient(-90deg, #E7A1B0 100%, #A14436 65%, transparent 20%);
 }
 
-
+.dleonor{
+  margin-top: 2%; 
+  font-family: 'P22 Imperial Script', cursive; 
+  font-size: 30px;
+}
 
 .login{
-  background: #fffff0;
+  background: white;
   border-radius: 5%;
-  border: 5px solid pink;
   width: 30%;
   height: 70%;
+  margin-top: -1%;
+  float: right;
+  margin-right: 10%;
   text-align: center;
-  margin-top: 4%;
-  margin-left: 35%;
   font-size: 15px;
 }
 
@@ -38,9 +42,8 @@ body {
 .welcome{
   font-size: 30px;
   text-align: center;
-  background-color: rgba(40,40,40,40);
-  border: 4px solid pink;
-  padding: 3%;
+  background-color: black;
+  padding: 2%;
   color: white;
 }
 
@@ -51,18 +54,18 @@ body {
 }
 
 .entrance{
-  background-color: #fffff0;
+  background-color: white;
   width: 80%;
-  border-radius: 10%;
-  border: 2px solid pink;
+  border-radius: 5%;
+  border: 2px solid black;
 }
 
 
 .walk{
-  background-color: #fffff0;
+  background-color: white;
   width: 80%;
-  border-radius: 10%;
-  border: 2px solid pink;
+  border-radius: 5%;
+  border: 2px solid black;
 }
 
 .image {
@@ -125,7 +128,6 @@ body {
   color: black;
   background: white;
   width: 30%;
-  height: 80%;
   padding: 2%;
   float: left;
   margin-left: 30%;
@@ -137,7 +139,6 @@ body {
   width: 44%;
   margin-left: 3%;
   margin-right: 3%;
-  border-style: solid;
   margin-bottom: 1%;
 }
 
@@ -146,7 +147,6 @@ body {
   margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 5%;
-  border-style: solid;
 }
 
 .ab{
@@ -155,7 +155,8 @@ body {
   color: black;
   font-family: Helvetica;
   font-size: 14px;
-  background-color: #9EE7FA;
+  background-color: white;
+  border: 4px solid pink;
 }
 
 .ab-pic{
@@ -168,7 +169,8 @@ body {
   color: black;
   font-family: Helvetica;
   font-size: 14px;
-  background-color: #ffc0cb;
+  background-color: white;
+  border: 4px solid skyblue;
 }
 
 .bo-pic{
@@ -179,4 +181,25 @@ body {
   float: right;
   width: 30%;
   margin-right: 10%;
+}
+
+.button {
+  padding: 5px 10px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #19A3FF;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #999;
+}
+
+.button:hover {background-color: #111E6C}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
