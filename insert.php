@@ -237,7 +237,7 @@ if ( $mysqli->query($sqlr) ){
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/welcom.css">
+    <link rel="stylesheet" href="css/welcome.css">
 	<title>Receipt</title>
 </head>
 <body>
@@ -313,7 +313,7 @@ if ( $mysqli->query($sqlr) ){
 				Thank you. Come again.</strong></center></p>
 			</div>
 	</div>	
-	
+	<button style="float: left; margin-left: 30%; margin-top: 5%; width: 30%;" class="button"><a href="welcome.php">Back to Menu page</a></button>
 		<button onclick="myFunction()" style="float: right; margin-right: 30%; margin-top: 1%; width: 4%;" class="button"><img src="Images/print.png" alt="Print" style="width: 80%;"></button>
 </body>
 <script>

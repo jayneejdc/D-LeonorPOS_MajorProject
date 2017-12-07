@@ -21,7 +21,7 @@
     	<br><br>
     	<h3>Log In</h3>
     	<br><br>
-		<form class="form" action="welcome.php" method="post">
+		<form class="form" action="login.php" method="post">
 			<label>Employee Email: <br><br><input type="text" name="email"></label><br><br>
 			<label>Password: <br><br><input type="password" name="password"></label><br><br><br>
 			<input type="submit" name="submit" value="Login">

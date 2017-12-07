@@ -151,7 +151,7 @@ if ($bbdisc==""){
 	$bbdisc="0";
 }
 if (empty($gskid) && empty($gsadult) && empty($gsdisc) && empty($wpkid) && empty($wpadult) && empty($wpdisc) && empty($bckid) && empty($bcadult) && empty($bcdisc) && empty($bkkid) && empty($bkadult) && empty($bkdisc) && empty($zkid) && empty($zadult) && empty($zdisc) && empty($cckid) && empty($ccadult) && empty($ccdisc) && empty($akid) && empty($aadult) && empty($adisc) && empty($skid) && empty($sadults) && empty($sdisc) && empty($gkkid) && empty($gkadult) && empty($gkdisc) && empty($bbkid) && empty($bbadult) && empty($bbdisc) ) {
-	
+
 	header("location: walkin.php");
 }
 $options="";
