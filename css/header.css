@@ -1,0 +1,21 @@
+#header{
+  margin:0;
+  padding:0;
+  background: 
+  linear-gradient(45deg,  transparent 0%, transparent 57%, #FFBBDA 100%),
+  linear-gradient(-45deg, #8f5046 0%,  #D5647C 0.3%, #A8CCE9 112%,  transparent 11% ),
+  linear-gradient(-90deg, #E7A1B0 100%, #A14436 65%, transparent 20%);
+}
+
+@media (min-width: 100%) {
+  ul.nav li:hover > ul.dropdown-menu {
+    display: block;
+  }
+  #navbar {
+    text-align: center;
+  }
+}
+
+li a{
+  color: white;
+}
