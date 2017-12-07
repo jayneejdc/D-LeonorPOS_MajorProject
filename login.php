@@ -12,15 +12,11 @@
   $active = "1";
   $firstname="";
   $lastname="";
-  $tuser="0";
-  $tpass="0";
-  $tactive="0";
+  $temp="0";
   $type="master";
   while ($row = mysqli_fetch_array($result)) {
     if ($row[1]==$email) {
-      $tuser="0";
       if ($row[2]==$password) {
-        $tpass="0";
         if ($row[7]==$active) {
           if ($row[9]==$type) {
             header("location: admin/index.php");
@@ -44,29 +40,13 @@
             $lastname = $_SESSION['lastname'];
             header("location: welcome.php");
           }
-        }else{
-          $tactive="1";
         }
-      }else{
-        $tpass="1";
       }
-    }else{
-      $tuser="1";
     }
   }
 
-  if ($tuser=="1") {
-    $_SESSION['message'] = "The email you entered is incorrect";
-    header("location: error.php"); 
+  if ($temp=="0") {
+    $_SESSION['message'] = "Please put valid credentials";
+    header("location: error.php");
   }
-  if ($tpass=="1") {
-    $_SESSION['message'] = "The password you entered doesnt match the email";
-    header("location: error.php"); 
-  }
-  if ($tactive=="1") {
-    $_SESSION['message'] = "The account is not active please coordinate with your adminstrator";
-    header("location: error.php"); 
-  }
-
-  
 ?>
