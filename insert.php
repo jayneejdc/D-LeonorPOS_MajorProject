@@ -222,9 +222,9 @@ if (!empty($akid)||!empty($aadult)||!empty($adisc)) {
 	if ( $mysqli->query($sql) ){
 	}
 }
-$ent=(($ekid*100) + ($eadult*100) + ($edisc*100));
-$rides=(($akid*100) + ($aadult*100) + ($adisc*100) + ($bbkid*100) + ($bbadult*100) + ($bbdisc*100) + ($bckid*100) + ($bcadult*100) + ($bcdisc*100) + ($bkkid*100) + ($bkadult*100) + ($bkdisc*100) + ($cckid*100) + ($ccadult*100) + ($ccdisc*100) + ($gkkid*100) + ($gkadult*100) + ($gkdisc*100) + ($skid*100) + ($sadults*100) + ($sdisc*100) + ($zkid*100) + ($zadult*100) + ($zdisc*100));
-$pool=(($wpkid*100) + ($wpadult*100) + ($wpdisc*100) + ($gskid*100) + ($gsadult*100) + ($gsdisc*100));
+$ent=(($ekid*100) + ($eadult*150) + ($edisc*100));
+$rides=(($akid*150) + ($aadult*200) + ($adisc*150) + ($bbkid*100) + ($bbadult*150) + ($bbdisc*100) + ($bckid*100) + ($bcadult*150) + ($bcdisc*100) + ($bkkid*100) + ($bkadult*150) + ($bkdisc*100) + ($cckid*100) + ($ccadult*150) + ($ccdisc*100) + ($gkkid*150) + ($gkadult*200) + ($gkdisc*150) + ($skid*150) + ($sadults*200) + ($sdisc*150) + ($zkid*100) + ($zadult*150) + ($zdisc*100));
+$pool=(($wpkid*100) + ($wpadult*150) + ($wpdisc*100) + ($gskid*150) + ($gsadult*200) + ($gsdisc*150));
 $sum=($ent+$rides+$pool);
 $sqlr = "INSERT INTO  revenue ( entrance ,  pool ,  rides ,  total ,  transacid ,  dat ,  username ) VALUES ('$ent','$pool','$rides','$sum','$options',NOW(),'$num')";
 if ( $mysqli->query($sqlr) ){
@@ -260,47 +260,47 @@ if ( $mysqli->query($sqlr) ){
 			<th>AMOUNT</P></th>	
 		</tr>
 			<p> <?php if(!empty($ekid)){echo "<tr><td>".$ekid."</td><td>Entrance(kid):</td>"."<td>".($ekid*100)."</td>"."</tr>"; }?></p>
-			<p> <?php if(!empty($eadult)){ echo "<tr><td>".$eadult."</td><td>Entrance(Adult):</td>"."<td>".($eadult*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($eadult)){ echo "<tr><td>".$eadult."</td><td>Entrance(Adult):</td>"."<td>".($eadult*150)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($edisc)){ echo "<tr><td>".$edisc."</td><td>Entrance(Discounted):</td>"."<td>".($edisc*100)."</td>"."</tr>";} ?></p>
 
 			<p> <?php if(!empty($wpkid)){echo "<tr><td>".$wpkid."</td><td>Wavepool(kid):</td>"."<td>".($wpkid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($wpadult)){echo "<tr><td>".$wpadult."</td><td>Wavepool(adult):</td>"."<td>".($wpadult*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($wpadult)){echo "<tr><td>".$wpadult."</td><td>Wavepool(adult):</td>"."<td>".($wpadult*150)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($wpdisc)){echo "<tr><td>".$wpdisc."</td><td>Wavepool(discount):</td>"."<td>".($wpdisc*100)."</td>"."</tr>";} ?></p>
 
-			<p> <?php if(!empty($gskid)){echo "<tr><td>".$gskid."</td><td>Giant Slide(kid):</td>"."<td>".($gskid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($gsadult)){echo "<tr><td>".$gsadult."</td><td>Giant Slide(discount):</td>"."<td>".($gsadult*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($gsdisc)){echo "<tr><td>".$gsdisc."</td><td>Giant Slide(discount):</td>"."<td>".($gsdisc*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($gskid)){echo "<tr><td>".$gskid."</td><td>Giant Slide(kid):</td>"."<td>".($gskid*150)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($gsadult)){echo "<tr><td>".$gsadult."</td><td>Giant Slide(discount):</td>"."<td>".($gsadult*200)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($gsdisc)){echo "<tr><td>".$gsdisc."</td><td>Giant Slide(discount):</td>"."<td>".($gsdisc*150)."</td>"."</tr>";} ?></p>
 
-			<p> <?php if(!empty($akid)){echo "<tr><td>".$akid."</td><td>ATV Truck(kid):</td>"."<td>".($akid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($aadult)){echo "<tr><td>".$aadult."</td><td>ATV Truck(adult):</td>"."<td>".($aadult*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($adisc)){echo "<tr><td>".$adisc."</td><td>ATV Truck(discount):</td>"."<td>".($adisc*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($akid)){echo "<tr><td>".$akid."</td><td>ATV Truck(kid):</td>"."<td>".($akid*150)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($aadult)){echo "<tr><td>".$aadult."</td><td>ATV Truck(adult):</td>"."<td>".($aadult*200)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($adisc)){echo "<tr><td>".$adisc."</td><td>ATV Truck(discount):</td>"."<td>".($adisc*150)."</td>"."</tr>";} ?></p>
 
 			<p> <?php if(!empty($bbkid)){echo "<tr><td>".$bbkid."</td><td>Bump Boat(kid):</td>"."<td>".($bbkid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($bbadult)){echo "<tr><td>".$bbadult."</td><td>Bump Boat(adult):</td>"."<td>".($bbadult*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($bbadult)){echo "<tr><td>".$bbadult."</td><td>Bump Boat(adult):</td>"."<td>".($bbadult*150)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($bbdisc)){echo "<tr><td>".$bbdisc."</td><td>Bump Boat(discount):</td>"."<td>".($bbdisc*100)."</td>"."</tr>";} ?></p>
 
 			<p> <?php if(!empty($bckid)){echo "<tr><td>".$bckid."</td><td>Bump Car(kid):</td>"."<td>".($bckid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($bcadult)){echo "<tr><td>".$bcadult."</td><td>Bump Car(adult):</td>"."<td>".($bcadult*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($bcadult)){echo "<tr><td>".$bcadult."</td><td>Bump Car(adult):</td>"."<td>".($bcadult*150)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($bcdisc)){echo "<tr><td>".$bcdisc."</td><td>Bump Car(discount):</td>"."<td>".($bcdisc*100)."</td>"."</tr>";} ?></p>
 
 			<p> <?php if(!empty($bkkid)){echo "<tr><td>".$bkkid."</td><td>Buggy Kart(kid):</td>"."<td>".($bkkid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($bkadult)){echo "<tr><td>".$bkadult."</td><td>Buggy Kart(adult):</td>"."<td>".($bkadult*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($bkadult)){echo "<tr><td>".$bkadult."</td><td>Buggy Kart(adult):</td>"."<td>".($bkadult*150)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($bkdisc)){echo "<tr><td>".$bkdisc."</td><td>Buggy Kart(discount):</td>"."<td>".($bkdisc*100)."</td>"."</tr>";} ?></p>
 
 			<p> <?php if(!empty($cckid)){echo "<tr><td>".$cckid."</td><td>Cable Car(kid):</td>"."<td>".($cckid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($ccadult)){echo "<tr><td>".$ccadult."</td><td>Cable Car(adult):</td>"."<td>".($ccadult*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($ccadult)){echo "<tr><td>".$ccadult."</td><td>Cable Car(adult):</td>"."<td>".($ccadult*150)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($ccdisc)){echo "<tr><td>".$ccdisc."</td><td>Cable Car(discount):</td>"."<td>".($ccdisc*100)."</td>"."</tr>";} ?></p>
 
-			<p> <?php if(!empty($gkkid)){echo "<tr><td>".$gkkid."</td><td>Go Kart(kid):</td>"."<td>".($gkkid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($gkadult)){echo "<tr><td>".$gkadult."</td><td>Go Kart(adult):</td>"."<td>".($gkadult*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($gkdisc)){echo "<tr><td>".$gkdisc."</td><td>Go Kart(discount):</td>"."<td>".($gkdisc*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($gkkid)){echo "<tr><td>".$gkkid."</td><td>Go Kart(kid):</td>"."<td>".($gkkid*150)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($gkadult)){echo "<tr><td>".$gkadult."</td><td>Go Kart(adult):</td>"."<td>".($gkadult*200)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($gkdisc)){echo "<tr><td>".$gkdisc."</td><td>Go Kart(discount):</td>"."<td>".($gkdisc*150)."</td>"."</tr>";} ?></p>
 
-			<p> <?php if(!empty($skid)){echo "<tr><td>".$skid."</td><td>Segway(kid):</td>"."<td>".($skid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($sadults)){echo "<tr><td>".$sadults."</td><td>Segway(adult):</td>"."<td>".($sadults*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($sdisc)){echo "<tr><td>".$sdisc."</td><td>Segway(discount):</td>"."<td>".($sdisc*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($skid)){echo "<tr><td>".$skid."</td><td>Segway(kid):</td>"."<td>".($skid*150)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($sadults)){echo "<tr><td>".$sadults."</td><td>Segway(adult):</td>"."<td>".($sadults*200)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($sdisc)){echo "<tr><td>".$sdisc."</td><td>Segway(discount):</td>"."<td>".($sdisc*150)."</td>"."</tr>";} ?></p>
 
 			<p> <?php if(!empty($zkid)){echo "<tr><td>".$zkid."</td><td>Zipline(kid):</td>"."<td>".($zkid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($zadult)){echo "<tr><td>".$zadult."</td><td>Zipline(adult):</td>"."<td>".($zadult*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($zadult)){echo "<tr><td>".$zadult."</td><td>Zipline(adult):</td>"."<td>".($zadult*150)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($zdisc)){echo "<tr><td>".$zdisc."</td><td>Zipline(discount):</td>"."<td>".($zdisc*100)."</td>"."</tr>";} ?></p>
 
 			<p><tr><td></td><td><strong>Total:</strong></td><td><strong><?php echo $sum; ?></strong></td></tr></p>
