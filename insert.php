@@ -222,9 +222,9 @@ if (!empty($akid)||!empty($aadult)||!empty($adisc)) {
 	if ( $mysqli->query($sql) ){
 	}
 }
-$ent=(($ekid*100) + ($eadult*150) + ($edisc*100));
-$rides=(($akid*150) + ($aadult*200) + ($adisc*150) + ($bbkid*100) + ($bbadult*150) + ($bbdisc*100) + ($bckid*100) + ($bcadult*150) + ($bcdisc*100) + ($bkkid*100) + ($bkadult*150) + ($bkdisc*100) + ($cckid*100) + ($ccadult*150) + ($ccdisc*100) + ($gkkid*150) + ($gkadult*200) + ($gkdisc*150) + ($skid*150) + ($sadults*200) + ($sdisc*150) + ($zkid*100) + ($zadult*150) + ($zdisc*100));
-$pool=(($wpkid*100) + ($wpadult*150) + ($wpdisc*100) + ($gskid*150) + ($gsadult*200) + ($gsdisc*150));
+$ent=(($ekid*100) + ($eadult*100) + ($edisc*100));
+$rides=(($akid*150) + ($aadult*200) + ($adisc*150) + ($bbkid*100) + ($bbadult*150) + ($bbdisc*100) + ($bckid*100) + ($bcadult*150) + ($bcdisc*100) + ($bkkid*100) + ($bkadult*150) + ($bkdisc*100) + ($cckid*150) + ($ccadult*250) + ($ccdisc*200) + ($gkkid*150) + ($gkadult*200) + ($gkdisc*150) + ($skid*150) + ($sadults*200) + ($sdisc*150) + ($zkid*150) + ($zadult*250) + ($zdisc*200));
+$pool=(($wpkid*100) + ($wpadult*200) + ($wpdisc*150) + ($gskid*100) + ($gsadult*200) + ($gsdisc*150));
 $sum=($ent+$rides+$pool);
 $sqlr = "INSERT INTO  revenue ( entrance ,  pool ,  rides ,  total ,  transacid ,  dat ,  username ) VALUES ('$ent','$pool','$rides','$sum','$options',NOW(),'$num')";
 if ( $mysqli->query($sqlr) ){
@@ -241,6 +241,8 @@ if ( $mysqli->query($sqlr) ){
 	<title>Receipt</title>
 </head>
 <body>
+	<button style="float: left; margin-left: 32%; margin-top: 1%; width: 30%;" class="button"><a href="welcome.php">Back to Menu page</a></button>
+		<button onclick="myFunction()" style="float: right; margin-right: 30%; margin-top: 1%; width: 4%;" class="button"><img src="Images/print.png" alt="Print" style="width: 80%;"></button>
 	<div class="receipt">
 	<table style="width: 100%; text-align: center;">
 		<img src="Images/logoo.png" style="width: 10%; margin-left: 45%;">
@@ -260,14 +262,14 @@ if ( $mysqli->query($sqlr) ){
 			<th>AMOUNT</P></th>	
 		</tr>
 			<p> <?php if(!empty($ekid)){echo "<tr><td>".$ekid."</td><td>Entrance(kid):</td>"."<td>".($ekid*100)."</td>"."</tr>"; }?></p>
-			<p> <?php if(!empty($eadult)){ echo "<tr><td>".$eadult."</td><td>Entrance(Adult):</td>"."<td>".($eadult*150)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($eadult)){ echo "<tr><td>".$eadult."</td><td>Entrance(Adult):</td>"."<td>".($eadult*100)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($edisc)){ echo "<tr><td>".$edisc."</td><td>Entrance(Discounted):</td>"."<td>".($edisc*100)."</td>"."</tr>";} ?></p>
 
 			<p> <?php if(!empty($wpkid)){echo "<tr><td>".$wpkid."</td><td>Wavepool(kid):</td>"."<td>".($wpkid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($wpadult)){echo "<tr><td>".$wpadult."</td><td>Wavepool(adult):</td>"."<td>".($wpadult*150)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($wpdisc)){echo "<tr><td>".$wpdisc."</td><td>Wavepool(discount):</td>"."<td>".($wpdisc*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($wpadult)){echo "<tr><td>".$wpadult."</td><td>Wavepool(adult):</td>"."<td>".($wpadult*200)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($wpdisc)){echo "<tr><td>".$wpdisc."</td><td>Wavepool(discount):</td>"."<td>".($wpdisc*150)."</td>"."</tr>";} ?></p>
 
-			<p> <?php if(!empty($gskid)){echo "<tr><td>".$gskid."</td><td>Giant Slide(kid):</td>"."<td>".($gskid*150)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($gskid)){echo "<tr><td>".$gskid."</td><td>Giant Slide(kid):</td>"."<td>".($gskid*100)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($gsadult)){echo "<tr><td>".$gsadult."</td><td>Giant Slide(discount):</td>"."<td>".($gsadult*200)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($gsdisc)){echo "<tr><td>".$gsdisc."</td><td>Giant Slide(discount):</td>"."<td>".($gsdisc*150)."</td>"."</tr>";} ?></p>
 
@@ -287,9 +289,9 @@ if ( $mysqli->query($sqlr) ){
 			<p> <?php if(!empty($bkadult)){echo "<tr><td>".$bkadult."</td><td>Buggy Kart(adult):</td>"."<td>".($bkadult*150)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($bkdisc)){echo "<tr><td>".$bkdisc."</td><td>Buggy Kart(discount):</td>"."<td>".($bkdisc*100)."</td>"."</tr>";} ?></p>
 
-			<p> <?php if(!empty($cckid)){echo "<tr><td>".$cckid."</td><td>Cable Car(kid):</td>"."<td>".($cckid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($ccadult)){echo "<tr><td>".$ccadult."</td><td>Cable Car(adult):</td>"."<td>".($ccadult*150)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($ccdisc)){echo "<tr><td>".$ccdisc."</td><td>Cable Car(discount):</td>"."<td>".($ccdisc*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($cckid)){echo "<tr><td>".$cckid."</td><td>Cable Car(kid):</td>"."<td>".($cckid*150)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($ccadult)){echo "<tr><td>".$ccadult."</td><td>Cable Car(adult):</td>"."<td>".($ccadult*250)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($ccdisc)){echo "<tr><td>".$ccdisc."</td><td>Cable Car(discount):</td>"."<td>".($ccdisc*200)."</td>"."</tr>";} ?></p>
 
 			<p> <?php if(!empty($gkkid)){echo "<tr><td>".$gkkid."</td><td>Go Kart(kid):</td>"."<td>".($gkkid*150)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($gkadult)){echo "<tr><td>".$gkadult."</td><td>Go Kart(adult):</td>"."<td>".($gkadult*200)."</td>"."</tr>";} ?></p>
@@ -299,9 +301,9 @@ if ( $mysqli->query($sqlr) ){
 			<p> <?php if(!empty($sadults)){echo "<tr><td>".$sadults."</td><td>Segway(adult):</td>"."<td>".($sadults*200)."</td>"."</tr>";} ?></p>
 			<p> <?php if(!empty($sdisc)){echo "<tr><td>".$sdisc."</td><td>Segway(discount):</td>"."<td>".($sdisc*150)."</td>"."</tr>";} ?></p>
 
-			<p> <?php if(!empty($zkid)){echo "<tr><td>".$zkid."</td><td>Zipline(kid):</td>"."<td>".($zkid*100)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($zadult)){echo "<tr><td>".$zadult."</td><td>Zipline(adult):</td>"."<td>".($zadult*150)."</td>"."</tr>";} ?></p>
-			<p> <?php if(!empty($zdisc)){echo "<tr><td>".$zdisc."</td><td>Zipline(discount):</td>"."<td>".($zdisc*100)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($zkid)){echo "<tr><td>".$zkid."</td><td>Zipline(kid):</td>"."<td>".($zkid*150)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($zadult)){echo "<tr><td>".$zadult."</td><td>Zipline(adult):</td>"."<td>".($zadult*250)."</td>"."</tr>";} ?></p>
+			<p> <?php if(!empty($zdisc)){echo "<tr><td>".$zdisc."</td><td>Zipline(discount):</td>"."<td>".($zdisc*200)."</td>"."</tr>";} ?></p>
 
 			<p><tr><td></td><td><strong>Total:</strong></td><td><strong><?php echo $sum; ?></strong></td></tr></p>
 			<br>
@@ -313,8 +315,7 @@ if ( $mysqli->query($sqlr) ){
 				Thank you. Come again.</strong></center></p>
 			</div>
 	</div>	
-	<button style="float: left; margin-left: 30%; margin-top: 5%; width: 30%;" class="button"><a href="welcome.php">Back to Menu page</a></button>
-		<button onclick="myFunction()" style="float: right; margin-right: 30%; margin-top: 1%; width: 4%;" class="button"><img src="Images/print.png" alt="Print" style="width: 80%;"></button>
+	
 </body>
 <script>
 function myFunction() {
