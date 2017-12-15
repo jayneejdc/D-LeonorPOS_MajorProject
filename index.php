@@ -24,6 +24,7 @@
 		<form class="form" action="login.php" method="post">
 			<label>Employee Email: <br><br><input type="text" name="email"></label><br><br>
 			<label>Password: <br><br><input type="password" name="password"></label><br><br><br>
+			<a href="forgot.php">Forgot Passowrd?</a><br><br>
 			<input type="submit" name="submit" value="Login">
 			<input type="hidden" name="temp" value="0">
 		</form>
